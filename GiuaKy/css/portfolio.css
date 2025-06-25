@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -20,27 +21,30 @@ body.fade-in {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
-     }
+    }
 }
 
 @keyframes gradientBG {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 header {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: calc(100% - 4rem);
     top: 0;
@@ -52,7 +56,7 @@ header.scrolled {
     background-color: rgba(26, 26, 26, 0.7);
     backdrop-filter: blur(10px);
     padding: 0.5rem 2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -117,9 +121,9 @@ nav ul li a.active {
 }
 
 @media (min-height: 700px) {
-  #hero {
-    min-height: 70vh;
-  }
+    #hero {
+        min-height: 70vh;
+    }
 }
 
 #particles-js {
@@ -152,8 +156,8 @@ nav ul li a.active {
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto 30px auto;
-    border: 5px solid rgba(255,255,255,0.8);
-    box-shadow: 0 0 30px rgba(255,255,255,0.6);
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
     flex-shrink: 0;
 }
 
@@ -166,7 +170,7 @@ nav ul li a.active {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
     color: #fff;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     margin: 10px 0;
 }
 
@@ -174,7 +178,7 @@ nav ul li a.active {
     font-family: 'Montserrat', sans-serif;
     font-size: 4rem;
     color: #fff;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     margin: 10px 0;
 }
 
@@ -182,7 +186,7 @@ nav ul li a.active {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #f0f0f0;
-    text-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
 }
 
 main {
@@ -197,13 +201,13 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 section:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 section h2 {
@@ -213,7 +217,7 @@ section h2 {
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     transform: scale(1.2);
 }
 
@@ -275,13 +279,13 @@ section h2 i {
     background: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .project-card img {
@@ -410,7 +414,7 @@ section h2 i {
         padding: 1rem;
         width: calc(100% - 2rem);
     }
-    
+
     header.scrolled {
         padding: 0.5rem 1rem;
     }
@@ -450,7 +454,7 @@ section h2 i {
         padding: 20px;
         text-align: center;
     }
-    
+
     .hero-text {
         text-align: center;
     }
@@ -500,43 +504,61 @@ section h2 i {
     section {
         max-width: 1320px;
     }
+
     main {
         padding: 0 4rem;
     }
 }
 
 #about:hover {
-    box-shadow: 0 0 40px 0 #00eaff99, 0 8px 32px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 40px 0 #00eaff99, 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     transform: scale(1.04);
     border: 2px solid #00eaff;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #career:hover {
-    box-shadow: 0 20px 60px 0 #ffb34799, 0 8px 32px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 20px 60px 0 #ffb34799, 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     border: 2px solid #ffb347;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #hobbies:hover {
     background: linear-gradient(120deg, #23d5ab 0%, #ee7752 100%);
-    box-shadow: 0 0 30px 0 #23d5ab99, 0 8px 32px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 30px 0 #23d5ab99, 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     animation: shake 0.4s;
     border: 2px solid #23d5ab;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes shake {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-5px); }
-    40% { transform: translateX(5px); }
-    60% { transform: translateX(-3px); }
-    80% { transform: translateX(3px); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-5px);
+    }
+
+    40% {
+        transform: translateX(5px);
+    }
+
+    60% {
+        transform: translateX(-3px);
+    }
+
+    80% {
+        transform: translateX(3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 #skills:hover {
-    box-shadow: 0 0 50px 0 #007bff99, 0 8px 32px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 50px 0 #007bff99, 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     border: 2px solid #007bff;
     transform: rotateY(6deg) scale(1.04);
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -544,11 +566,12 @@ section h2 i {
 
 #contact:hover {
     background: linear-gradient(90deg, #e73c7e 0%, #23a6d5 100%);
-    box-shadow: 0 0 60px 0 #e73c7e99, 0 8px 32px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 60px 0 #e73c7e99, 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     border: 2px solid #e73c7e;
     position: relative;
     overflow: hidden;
 }
+
 #contact:hover::after {
     content: '';
     position: absolute;
@@ -556,11 +579,17 @@ section h2 i {
     top: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.7) 100%);
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.7) 100%);
     transform: skewX(-20deg);
     animation: sweep 0.7s linear;
 }
+
 @keyframes sweep {
-    0% { left: -75%; }
-    100% { left: 120%; }
-} 
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 120%;
+    }
+}
