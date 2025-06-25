@@ -158,6 +158,14 @@
                     <p>Lập trình hệ thống, xử lý hiệu năng cao</p>
                     <div class="progress-text">70%</div>
                 </div>
+                <div class="skill-card">
+                    <div class="icon-box bg-white">
+                        <img src="icons/mysql.svg" alt="MySQL" />
+                    </div>
+                    <h3>MySQL</h3>
+                    <p>Quản lý cơ sở dữ liệu, truy vấn SQL hiệu quả</p>
+                    <div class="progress-text">70%</div>
+                </div>
             </div>
 
             <p class="section-subtitle" style="margin-top: 4rem;">Kỹ năng mềm</p>
@@ -324,107 +332,14 @@
     <footer class="scroll-reveal">
         <p>© 2025 Trần Vĩ Ân</p>
     </footer>
-
+    <button id="scrollToTopBtn" title="Về đầu trang">
+        <i class="fas fa-chevron-up"></i>
+    </button>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-        var typed = new Typed(".typed-text", {
-            strings: [" Một Sinh viên CNTT", "Web Developer", "Một Người Yêu công nghệ", "Người Thích sáng tạo"],
-            typeSpeed: 50,
-            backSpeed: 25,
-            backDelay: 1500,
-            loop: true
-        });
-    </script>
-    <script src="script.js"></script>
-    <div id="particles-js"></div>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS("particles-js", {
-            particles: {
-                number: {
-                    value: 80,
-                    density: { enable: true, value_area: 800 }
-                },
-                color: { value: "#b74b4b" },
-                shape: {
-                    type: "circle",
-                    stroke: { width: 0, color: "#000000" }
-                },
-                opacity: {
-                    value: 0.6,
-                    random: false,
-                    anim: { enable: false }
-                },
-                size: {
-                    value: 4,
-                    random: true,
-                    anim: { enable: false }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#b74b4b",
-                    opacity: 0.2,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    bounce: false,
-                    attract: { enable: false }
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "grab" },
-                    onclick: { enable: false },
-                    resize: true
-                },
-                modes: {
-                    grab: { distance: 140, line_linked: { opacity: 0.4 } },
-                }
-            },
-            retina_detect: true
-        });
-    </script>
-    <script>
-        // Active on click
-        const navLinks = document.querySelectorAll('.navbar a');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // Active khi scroll
-        const sections = document.querySelectorAll('section');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
-                const sectionHeight = section.offsetHeight;
-                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <div id="particles-js"></div>
+     <script src="script.js"></script>
 </body>
 
 </html>

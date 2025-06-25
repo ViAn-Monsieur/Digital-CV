@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trang Cá Nhân</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <h1>📘 Hồ sơ cá nhân</h1>
-  <div class="profile-container">
-    <div class="profile">
-      <a href="./lập trình web giữa kì/index.html" target="_blank">
-        <img src="./lập trình web giữa kì/img/4.jpg" alt="Nguyễn Đức Trung" />
-      </a>
-      <p>Nhà phát triển web & nhà thiết kế giao diện</p>
-      <a class="name" href="./lập trình web giữa kì/index.html" target="_blank">Nguyễn Đức Trung</a>
+    <div class="main-slide">
+        <div class="member-card">
+            <img src="GiuaKy/images/avatar.jpg" alt="Avatar" class="avatar">
+            <h1>Lê Nhật Tân</h1>
+            <a href="GiuaKy/portfolio.html" class="btn" id="portfolio-link">Tìm hiểu thêm</a>
+        </div>
+        <div class="member-card">
+            <img src="lập trình web giữa kì/img/4.jpg" alt="Avatar" class="avatar">
+            <h1>Nguyễn Đức Trung</h1>
+            <a href="lập trình web giữa kì/index.html" class="btn" id="portfolio-link">Tìm hiểu thêm</a>
+        </div>
+        <div class="member-card">
+            <img src="profile/img/ddd.jfif" alt="Avatar" class="avatar">
+            <h1>Trần Vĩ Ân</h1>
+            <a href="profile/index.html" class="btn" id="portfolio-link">Tìm hiểu thêm</a>
+        </div>
     </div>
-
-    <div class="profile">
-      <a href="./profile/index.html" target="_blank">
-        <img src="./profile/img/ddd.jfif" alt="Trần Vĩ Ân" />
-      </a>
-      <p>Luôn không ngừng học hỏi, đổi mới và sẵn sàng chinh phục những thử thách công nghệ phía trước.</p>
-      <a class="name" href="./profile/index.html" target="_blank">Trần Vĩ Ân</a>
-    </div>
-  </div>
+    <script>
+        document.getElementById('portfolio-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            const destination = this.href;
+            document.body.classList.add('fade-out');
+            setTimeout(function() {
+                window.location.href = destination;
+            }, 500); // Match animation duration
+        });
+    </script>
 </body>
-</html>
+</html> 

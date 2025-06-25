@@ -1,50 +1,112 @@
-// Toggle dark mode
-const themeBtn = document.getElementById("toggle-theme");
-themeBtn.onclick = () => {
-  document.body.classList.toggle("dark");
-  themeBtn.classList.toggle("active");
-};
-
-// ScrollReveal config
-ScrollReveal().reveal(".scroll-reveal", {
-  distance: "50px",
-  duration: 1200,
-  easing: "ease-in-out",
-  origin: "bottom",
-  interval: 200,
-  reset: false,
+var typed = new Typed(".typed-text", {
+  strings: [
+    " Một Sinh viên CNTT",
+    "Web Developer",
+    "Một Người Yêu công nghệ",
+    "Người Thích sáng tạo",
+  ],
+  typeSpeed: 50,
+  backSpeed: 25,
+  backDelay: 1500,
+  loop: true,
 });
 
-// Simple animated background dots
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-const particles = [];
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 80,
+      density: { enable: true, value_area: 800 },
+    },
+    color: { value: "#b74b4b" },
+    shape: {
+      type: "circle",
+      stroke: { width: 0, color: "#000000" },
+    },
+    opacity: {
+      value: 0.6,
+      random: false,
+      anim: { enable: false },
+    },
+    size: {
+      value: 4,
+      random: true,
+      anim: { enable: false },
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#b74b4b",
+      opacity: 0.2,
+      width: 1,
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      random: false,
+      straight: false,
+      bounce: false,
+      attract: { enable: false },
+    },
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: false },
+      resize: true,
+    },
+    modes: {
+      grab: { distance: 140, line_linked: { opacity: 0.4 } },
+    },
+  },
+  retina_detect: true,
+});
 
-for (let i = 0; i < 100; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: (Math.random() - 0.5) * 0.5,
-    dy: (Math.random() - 0.5) * 0.5,
+// Active on click
+const navLinks = document.querySelectorAll(".navbar a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    navLinks.forEach((l) => l.classList.remove("active"));
+    this.classList.add("active");
   });
-}
+});
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach((p) => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(255,255,255,0.2)";
-    ctx.fill();
-    p.x += p.dx;
-    p.y += p.dy;
+// Active khi scroll
+const sections = document.querySelectorAll("section");
 
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.offsetHeight;
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
   });
-  requestAnimationFrame(animate);
-}
-animate();
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+const scrollBtn = document.getElementById("scrollToTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
