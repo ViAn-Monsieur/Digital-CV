@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Cá Nhân - Nguyễn Đức Trung</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <h1 class="logo">Nguyễn Đức Trung</h1>
+      <ul class="nav-links">
+        <li><a href="#" onclick="showSection('home')">Trang chủ</a></li>
+        <li><a href="#" onclick="showSection('about')">Giới thiệu</a></li>
+        <li><a href="#" onclick="showSection('projects')">Dự án</a></li>
+        <li><a href="#" onclick="showSection('hobbies')">Sở thích</a></li>
+        <li><a href="#" onclick="showSection('contact')">Liên hệ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Trang chủ -->
+  <header id="home" class="hero tab-section">
+    <div class="hero-content">
+      <h2>Xin chào! Tôi là Nguyễn Đức Trung</h2>
+      <p>Nhà phát triển web & nhà thiết kế giao diện</p>
+    </div>
+  </header>
+
+  <!-- Giới thiệu -->
+  <section id="about" class="section tab-section" style="display:none;">
+    <div class="container">
+      <img src="img/4.jpg" alt="Ảnh cá nhân"
+        style="width: 200px; border-radius: 50%; display: block; margin: 0 auto 20px;">
+      <h2>Về Tôi</h2>
+      <p>Xin chào! Tôi tên là Nguyễn Đức Trung, hiện đang sống và học tập tại Thành phố Hồ Chí Minh, Việt Nam.</p>
+      <p>Tôi là một lập trình viên đam mê sáng tạo giao diện và trải nghiệm người dùng, chuyên về HTML, CSS,
+        JavaScript và các công nghệ web hiện đại.</p>
+    </div>
+  </section>
+
+  <!-- Dự án -->
+  <section id="projects" class="section projects tab-section" style="display:none;">
+    <div class="container">
+      <h2>Dự Án Nổi Bật</h2>
+      <div class="project-grid">
+        <div class="project-item">
+          <img src="img/5.jpg" alt="Dự án 1">
+          <h3>Page Bán Hàng:
+            <a href="https://www.facebook.com/trung.tien.te.DN"
+              target="_blank">https://www.facebook.com/trung.tien.te.DN</a>
+          </h3>
+          <p>Phát triển đồ sưu tầm "tiền lưu niệm"</p>
+        </div>
+        <div class="project-item">
+          <img src="project2.jpg" alt="Dự án 2">
+          <h3>Portfolio Cá Nhân</h3>
+          <p>Trình bày hồ sơ chuyên nghiệp, hỗ trợ nhiều nền tảng.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sở thích -->
+  <section id="hobbies" class="section tab-section" style="display:none;">
+    <div class="container">
+      <h2 class="hobby-title">SỞ THÍCH</h2>
+      <div class="hobby-grid">
+        <div class="hobby-item">
+          <img src="img/hangsondoong.webp" alt="khám phá">
+          <p class="hobby-label">khám phá</p>
+        </div>
+        <div class="hobby-item">
+          <img src="img/mon-the-thao-dot-calo-nhieu-nhat-1.webp" alt="thể thao">
+          <p class="hobby-label">thể thao</p>
+        </div>
+        <div class="hobby-item">
+          <img src="img/images.jpg" alt="công nghệ">
+          <p class="hobby-label">công nghệ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Liên hệ -->
+  <section id="contact" class="section tab-section contact-light">
+  <div class="container">
+    <h2><i class="icon">📧</i> Liên hệ với tôi</h2>
+    <hr class="divider">
+
+    <p>Nếu bạn có bất kỳ câu hỏi nào hoặc muốn hợp tác, hãy liên hệ qua thông tin bên dưới:</p>
+
+    <p><i class="icon">📧</i> Email: <a href="mailto:trungnguyenzz2203@gmail.com">trungnguyenzz2203@gmail.com</a></p>
+    <p><i class="icon">📞</i> Số điện thoại & Zalo: <strong>0984 916 705</strong></p>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Tên của bạn" required>
+      <input type="email" name="email" placeholder="Email của bạn" required>
+      <textarea name="message" rows="5" placeholder="Nội dung tin nhắn" required></textarea>
+      <button type="submit">Gửi tin nhắn</button>
+    </form>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Nguyễn Đức Trung. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript để ẩn/hiện vùng nội dung -->
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.tab-section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
