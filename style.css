@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -10,7 +11,7 @@ body, html {
 .main-slide {
     width: 100%;
     height: 100vh;
-    background-image: url('GiuaKy/images/wallpaper.jpg');
+    background-image: url('./GiuaKy/images/wallpaper.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -23,7 +24,7 @@ body, html {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
 }
 
@@ -67,7 +68,8 @@ body.fade-out {
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
-     }
-} 
+    }
+}
