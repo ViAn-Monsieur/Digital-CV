@@ -110,3 +110,108 @@ scrollBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+ScrollReveal().reveal(".scroll-reveal", {
+  scale: 0.8, // Thu nhỏ lúc đầu
+  opacity: 0, // Ẩn lúc đầu
+  duration: 1000, // Thời gian hiệu ứng (ms)
+  easing: "ease-in-out",
+  interval: 150, // Delay giữa các thẻ
+  reset: false, // Nếu muốn chỉ zoom 1 lần
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const zoomCards = document.querySelectorAll(".zoom-in");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = "running";
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  zoomCards.forEach((el) => observer.observe(el));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const progressBars = document.querySelectorAll(".progress-fill");
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const percent = entry.target.getAttribute("data-percent");
+          entry.target.style.width = percent + "%";
+          obs.unobserve(entry.target); // chỉ chạy 1 lần
+        }
+      });
+    },
+    {
+      threshold: 0.4,
+    }
+  );
+
+  progressBars.forEach((bar) => observer.observe(bar));
+});
+
+const slides = document.querySelectorAll(".project-slide");
+const current = document.querySelector(".carousel-indicator .current");
+const total = document.querySelector(".carousel-indicator .total");
+const prevBtn = document.getElementById("prevSlide");
+const nextBtn = document.getElementById("nextSlide");
+
+let index = 0;
+total.textContent = slides.length.toString().padStart(2, "0");
+
+function showSlide(i) {
+  slides.forEach((s, idx) => s.classList.toggle("active", idx === i));
+  current.textContent = (i + 1).toString().padStart(2, "0");
+
+  // Reset gallery inside the shown slide
+  const gallery = slides[i].querySelector(".project-gallery");
+  if (gallery) {
+    const images = gallery.querySelectorAll("img");
+    images.forEach((img) => img.classList.remove("active"));
+    if (images.length > 0) {
+      images[0].classList.add("active");
+    }
+  }
+}
+
+prevBtn.onclick = () => {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+};
+
+nextBtn.onclick = () => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+};
+
+showSlide(index);
+
+// Gallery switch without slide animation
+function scrollGallery(button, direction) {
+  const container = button.closest(".project-gallery-container");
+  const gallery = container.querySelector(".project-gallery");
+  const images = gallery.querySelectorAll("img");
+
+  let currentIndex = [...images].findIndex((img) =>
+    img.classList.contains("active")
+  );
+  if (currentIndex === -1) currentIndex = 0;
+
+  images[currentIndex].classList.remove("active");
+
+  let nextIndex = currentIndex + direction;
+  if (nextIndex < 0) nextIndex = images.length - 1;
+  if (nextIndex >= images.length) nextIndex = 0;
+
+  images[nextIndex].classList.add("active");
+}
