@@ -389,7 +389,15 @@ span {
   color: #ffffff;
   font-weight: 600;
 }
+.goal-section {
+  margin-bottom: 1.5rem;
+}
 
+.goal-section h4 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
 /* ============================= */
 /* 🧠 SKILLS SECTION */
 /* ============================= */

@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-    <div class="main-slide">
-        <div class="member-card">
-            <img src="GiuaKy/images/avatar.jpg" alt="Avatar" class="avatar">
-            <h1>Lê Nhật Tân</h1>
-            <a href="GiuaKy/portfolio.html" class="btn" id="portfolio-link">Tìm hiểu thêm</a>
-        </div>
-        <div class="member-card">
-            <img src="lập trình web giữa kì/img/4.jpg" alt="Avatar" class="avatar">
-            <h1>Nguyễn Đức Trung</h1>
-            <a href="lập trình web giữa kì/index.html" class="btn" id="portfolio-link">Tìm hiểu thêm</a>
-        </div>
-        <div class="member-card">
-            <img src="profile/img/ddd.jfif" alt="Avatar" class="avatar">
-            <h1>Trần Vĩ Ân</h1>
-            <a href="profile/index.html" class="btn" id="portfolio-link">Tìm hiểu thêm</a>
+    <div class="header-title">
+        <h1>🌟 Thành Viên Nhóm 8</h1>
+        <p>Khám phá các hồ sơ cá nhân nổi bật của từng thành viên</p>
+    </div>
+    <div class="main-slide fade-in">
+        <div class="member-list">
+            <div class="member-card special-card">
+                <img src="GiuaKy/images/avatar.jpg" alt="Avatar" class="avatar sparkle" />
+                <h1>Lê Nhật Tân</h1>
+                <a href="GiuaKy/portfolio.html" class="btn glow-btn">Tìm hiểu thêm</a>
+            </div>
+            <div class="member-card special-card">
+                <img src="lập trình web giữa kì/img/4.jpg" alt="Avatar" class="avatar sparkle" />
+                <h1>Nguyễn Đức Trung</h1>
+                <a href="lập trình web giữa kì/index.html" class="btn glow-btn">Tìm hiểu thêm</a>
+            </div>
+            <div class="member-card special-card">
+                <img src="profile/img/ddd.jfif" alt="Avatar" class="avatar sparkle" />
+                <h1>Trần Vĩ Ân</h1>
+                <a href="profile/index.html" class="btn glow-btn">Tìm hiểu thêm</a>
+            </div>
         </div>
     </div>
+
+
     <script>
-        document.getElementById('portfolio-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            const destination = this.href;
-            document.body.classList.add('fade-out');
-            setTimeout(function() {
-                window.location.href = destination;
-            }, 500); // Match animation duration
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const destination = this.href;
+                document.body.classList.add('fade-out');
+                setTimeout(() => window.location.href = destination, 500);
+            });
         });
     </script>
 </body>
-</html> 
+
+</html>
