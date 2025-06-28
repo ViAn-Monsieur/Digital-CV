@@ -215,3 +215,37 @@ function scrollGallery(button, direction) {
 
   images[nextIndex].classList.add("active");
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".timeline-item");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  items.forEach(item => observer.observe(item));
+});
+ const avatar = document.querySelector(".home-img img");
+
+  avatar.addEventListener("mousemove", (e) => {
+    const bounds = avatar.getBoundingClientRect();
+    const centerX = bounds.left + bounds.width / 2;
+    const centerY = bounds.top + bounds.height / 2;
+    const offsetX = e.clientX - centerX;
+    const offsetY = e.clientY - centerY;
+
+    const rotateX = (-offsetY / 20).toFixed(2);
+    const rotateY = (offsetX / 20).toFixed(2);
+
+    avatar.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+
+  avatar.addEventListener("mouseleave", () => {
+    avatar.style.transform = "rotateX(0deg) rotateY(0deg)";
+  });

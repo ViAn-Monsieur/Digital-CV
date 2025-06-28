@@ -130,7 +130,7 @@ section {
 }
 
 span {
-  color: #b74b4b;
+  color: #00e0ff;
 }
 
 .home-content h3 {
@@ -142,17 +142,45 @@ span {
 .home-content p {
   font-size: 1.6rem;
 }
+/* Khi vào trang: avatar zoom-in */
+@keyframes zoomInAvatar {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Glow effect (ánh sáng nhẹ) */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px #b74b4b;
+  }
+  50% {
+    box-shadow: 0 0 30px #ff7373;
+  }
+  100% {
+    box-shadow: 0 0 10px #b74b4b;
+  }
+}
+
+.home-img {
+  perspective: 1000px;
+  display: inline-block;
+}
 
 .home-img img {
   width: 32vw;
   border-radius: 50%;
-  box-shadow: 0 0 25px solid #b74b4b;
-  transition: 0.2s linear;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
 .home-img img:hover {
-  font-size: 1.8rem;
-  font-weight: 500;
+  box-shadow: 0 0 40px #ff8a8a;
 }
 
 /* === Social Icons & Button === */
@@ -614,6 +642,16 @@ span {
 /* ============================= */
 /* 📅 TIMELINE SECTION */
 /* ============================= */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .timeline {
   position: relative;
   margin: 4rem auto;
